@@ -1,0 +1,21 @@
+
+@keyframes wave {
+    0% { d: path("M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,186.7C672,192,768,192,864,181.3C960,171,1056,149,1152,133.3C1248,117,1344,107,1392,101.3L1440,96L1440,0L0,0Z"); }
+    100% { d: path("M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,186.7C672,192,768,192,864,181.3C960,171,1056,149,1152,133.3C1248,117,1344,107,1392,101.3L1440,96L1440,0L0,0Z"); }
+  }
+  
+  .wavy-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    background: linear-gradient(to right, #59453c, #8f3a09);
+    mask-image: url(#wave);
+    -webkit-mask-image: url(#wave);
+    mask-size: cover;
+    -webkit-mask-size: cover;
+  }
+  
