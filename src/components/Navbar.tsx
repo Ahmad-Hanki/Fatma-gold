@@ -21,8 +21,8 @@ const Navbar = () => {
     <header className="relative">
       <MainHeader />
       <Container>
-        <nav className="relative w-full h-[20vh] z-10">
-          <div className="w-full flex items-center justify-between">
+        <nav className="relative w-full h-[20vh] z-10 px-10">
+          <div className="w-full flex items-center justify-between ">
             <div className="flex gap-6 items-center">
               <Logo />
               <p className="text-2xl">ذهب فاطمة</p>
