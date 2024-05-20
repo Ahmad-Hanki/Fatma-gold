@@ -1,5 +1,6 @@
 "use server";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 interface loginActionProps {
   username: string;
@@ -21,7 +22,8 @@ const loginAction = async ({ password, username }: loginActionProps) => {
       httpOnly: true,
       maxAge: 86400,
     });
-    return 1;
+
+    redirect('/dashboard');
   }
 };
 

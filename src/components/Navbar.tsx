@@ -47,6 +47,17 @@ const Navbar = () => {
                 >
                   المعروضات
                 </Link>
+                <Link
+                  href={"/dashboard"}
+                  className={cn(
+                    "text-2xl text-secondary-foreground/70",
+                    pathname == "/dashboard"
+                      ? "text-secondary-foreground "
+                      : ""
+                  )}
+                >
+                  تسجيل الدخول
+                </Link>
               </div>
               <div className="sm:hidden">
                 <DropdownMenu>
@@ -69,7 +80,9 @@ const Navbar = () => {
                       <Link
                         className={cn(
                           "text-2xl text-secondary-foreground/70",
-                          pathname == "/budget" ? "text-secondary-foreground " : ""
+                          pathname == "/budget"
+                            ? "text-secondary-foreground "
+                            : ""
                         )}
                         href={"/budget"}
                       >

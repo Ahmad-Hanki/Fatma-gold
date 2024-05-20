@@ -15,7 +15,7 @@ const SubmitButton = ({ submit, submitting }: SubmitButtonProps) => {
   if (pending)
     return (
       <Button className="w-full py-5 flex gap-2" disabled>
-        <Loader2 className="h-5 w-5" />
+        <Loader2 className="h-5 w-5 animate-spin" />
         <p>{submitting}</p>
       </Button>
     );

@@ -16,8 +16,8 @@ datasource db {
 model Product {
   id          String @id @default(uuid())
   name        String
-  description String
-
+  description String @db.VarChar(10000)
+  price  String? 
   createAt DateTime @default(now())
   updateAt DateTime @updatedAt
   images    Image[]
@@ -25,7 +25,7 @@ model Product {
 
 model Image {
   id       String @id @default(uuid())
-  imageUrl String @default("https://www.landuse-ca.org/wp-content/uploads/2019/04/no-photo-available.png")
+  imageUrl String @db.VarChar(10000)
 
   productId String
   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)

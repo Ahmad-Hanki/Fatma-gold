@@ -11,7 +11,7 @@ const DashboardLayout = ({children}:DashboardLayoutProps) => {
   const cookie = cookies();
   const data = cookie.get('togya');
   if (!data || data.name != 'togya' || data.value != 'togya') {
-    redirect('/');
+    redirect('/auth/login');
   }
   return children
 }
