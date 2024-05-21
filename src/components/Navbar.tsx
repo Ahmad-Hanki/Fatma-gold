@@ -33,7 +33,7 @@ const Navbar = () => {
                   href={"/"}
                   className={cn(
                     "text-2xl text-secondary-foreground/70",
-                    pathname == "/" ? "text-secondary-foreground " : ""
+                    pathname == "/" ? "text-secondary-foreground font-bold" : ""
                   )}
                 >
                   الرئيسية
@@ -42,7 +42,8 @@ const Navbar = () => {
                   href={"/budget"}
                   className={cn(
                     "text-2xl text-secondary-foreground/70",
-                    pathname == "/budget" ? "text-secondary-foreground " : ""
+                    pathname.includes("/budget")
+                    ? "text-secondary-foreground font-bold" : ""
                   )}
                 >
                   المعروضات
@@ -64,24 +65,25 @@ const Navbar = () => {
                   <DropdownMenuTrigger>
                     <Menu />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent>
+                  <DropdownMenuContent className="min-w-[250px] min-h-[40vh] bg-secondary/90 flex items-center flex-col pt-20">
                     <DropdownMenuItem>
                       <Link
                         className={cn(
                           "text-2xl text-secondary-foreground/70",
-                          pathname == "/" ? "text-secondary-foreground " : ""
+                          pathname == "/" ? "text-secondary-foreground font-bold" : ""
                         )}
                         href={"/"}
                       >
                         الرئيسية
                       </Link>
                     </DropdownMenuItem>
+                    
                     <DropdownMenuItem>
                       <Link
                         className={cn(
                           "text-2xl text-secondary-foreground/70",
-                          pathname == "/budget"
-                            ? "text-secondary-foreground "
+                          pathname.includes("/budget")
+                            ? "text-secondary-foreground font-bold"
                             : ""
                         )}
                         href={"/budget"}

@@ -20,7 +20,7 @@ interface DashboardClientProps {
 }
 
 const BudgetCart = ({ data }: DashboardClientProps) => {
-  const phoneNumber = "15551234567"; // Replace with the actual phone number
+  const phoneNumber = "+97470770668"; 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=لدي اهتمام في هذا المنتج: ${data.name} - ${data.description}`;
 
   let image: string | StaticImageData;
