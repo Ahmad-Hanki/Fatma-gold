@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import prisma from "@/db/prisma";
 import BudgetClient from "./_components/BudgetClient";
+import MotionDiv from "@/components/MotionDiv";
 
 const BudgetPage = async () => {
   const data = await prisma.product.findMany({
@@ -16,11 +17,20 @@ const BudgetPage = async () => {
     return (
       <div>
         <Container>
-          <div className="h-[70vh] w-full grid place-content-center">
+          <MotionDiv
+            initial={{
+              y:30,
+              opacity:0
+            }}
+            whileHover={{
+              y:0,
+              opacity:1
+            }}
+          className="h-[70vh] w-full grid place-content-center">
             <h1 className="text-3xl sm:text-5xl text-center">
               المكان خال. عد في وقت لاحق ....
             </h1>
-          </div>
+          </MotionDiv>
         </Container>
       </div>
     );

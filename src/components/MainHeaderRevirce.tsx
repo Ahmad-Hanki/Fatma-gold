@@ -2,7 +2,7 @@ const MainHeaderReverse = () => {
   return (
     <div className="absolute h-[35vh] top-0 left-0 w-full overflow-hidden bg-transparent z-[-1] p-0 m-0">
       <svg
-        className="absolute bottom-0 right-0 w-full"
+        className="absolute bottom-0 right-0 w-full h-[50vh]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
         preserveAspectRatio="none"

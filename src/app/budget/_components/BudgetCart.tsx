@@ -5,6 +5,7 @@ import defImage from "@/assets/defaultImage.png";
 import Image, { StaticImageData } from "next/image";
 import { formatDate } from "@/lib/formatter";
 import { Whatsapp } from "@/assets/Whatsapp";
+import MotionDiv from "@/components/MotionDiv";
 
 interface Image {
   id: string;
@@ -29,7 +30,22 @@ const BudgetCart = ({ data }: DashboardClientProps) => {
     data.images.find((img) => img.isPrimary) || data.images[0];
   image = primaryImage ? primaryImage.imageUrl : defImage;
   return (
-    <div>
+    <MotionDiv
+    initial={{
+      y: 30,
+      opacity: 0,
+    }}
+    whileInView={{
+      y: 0,
+      opacity: 1,
+    }}
+    viewport={{
+      once:true,
+      amount:0.6
+
+    }}
+
+    >
       <Card className="flex items-center flex-col justify-center gap-3 py-10">
         <div className="overflow-hidden relative w-[300px] aspect-[12/10]">
           <Image
@@ -60,7 +76,7 @@ const BudgetCart = ({ data }: DashboardClientProps) => {
           </Link>
         </div>
       </Card>
-    </div>
+    </MotionDiv>
   );
 };
 

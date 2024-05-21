@@ -33,7 +33,9 @@ export default function RootLayout({
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
         <Navbar />
-        <main>{children}</main>
+        <main
+        className="w-screen overflow-hidden"
+        >{children}</main>
         <Footer />
         <Toaster />
       </body>
