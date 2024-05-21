@@ -27,14 +27,13 @@ interface ProductFormProps {
 const ProductForm = ({ data }: ProductFormProps) => {
   const [uploadedImage, setUploadedImage] = useState<string[]>([]);
 
-  const editChosenImage = async (id:string, productId:string) => {
+  const editChosenImage = async (id: string, productId: string) => {
     await chosenImageProductAction(id, productId);
 
     toast({
       title: "  تم اختيار هذه الصورة كصورة عرض بنجاح ",
     });
-    
-  }
+  };
 
   const submitHandler = async (formData: FormData) => {
     const name = formData.get("name")?.toString();
@@ -110,7 +109,7 @@ const ProductForm = ({ data }: ProductFormProps) => {
       <Card className="p-10">
         <form
           action={submitHandler}
-          className="w-full min-w-[400px] flex flex-col gap-5"
+          className="px-8 w-full min-w-[400px] flex flex-col gap-5"
         >
           <Input
             className=" py-10"
@@ -167,9 +166,9 @@ const ProductForm = ({ data }: ProductFormProps) => {
                   console.log(img.imageUrl);
                   return (
                     <div
-                    onClick={() => {
-                      editChosenImage(img.id, img.productId)
-                    }}
+                      onClick={() => {
+                        editChosenImage(img.id, img.productId);
+                      }}
                       className="w-52 aspect-square overflow-hidden relative"
                       key={i}
                     >
