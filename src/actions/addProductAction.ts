@@ -2,7 +2,6 @@
 
 import prisma from "@/db/prisma";
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 
 interface addProductionActionProps {
   name: string;
