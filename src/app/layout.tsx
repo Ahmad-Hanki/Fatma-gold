@@ -7,6 +7,7 @@ import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 
 import { ourFileRouter } from "@/app/api/uploadthing/core";
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
         />
         <Navbar />
         <main>{children}</main>
+        <Footer />
         <Toaster />
       </body>
     </html>

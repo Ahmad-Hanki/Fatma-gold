@@ -6,8 +6,8 @@ import { redirect } from "next/navigation";
 
 const page = () => {
   const cookie = cookies();
-  const data = cookie.get('togya');
-  if (data && data.name == 'togya' && data.value == 'togya') {
+  const data = cookie.get('fatima');
+  if (data && data.name == 'fatima' && data.value == 'hanki123') {
     redirect('/dashboard');
   }
   return (

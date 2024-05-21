@@ -8,6 +8,7 @@ import defImage from "@/assets/defaultImage.png";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { formatDate } from "@/lib/formatter";
 interface Image {
   id: string;
   imageUrl: string;
@@ -17,11 +18,12 @@ interface Image {
 
 type ProductWithImages = Product & { images: Image[] };
 interface ProductDetailProps {
-  data?: ProductWithImages;
+  data: ProductWithImages;
 }
 const DetailSmall = ({ data }: ProductDetailProps) => {
   const phoneNumber = "+97470770668";
   const whatsappLink = `https://wa.me/${phoneNumber}?text=لدي اهتمام في هذا المنتج: ${data?.name} - ${data?.description}`;
+  const date = formatDate(data.createAt);
 
   return (
     <div className="flex flex-col items-center justify-center gap-7 ">
@@ -30,6 +32,8 @@ const DetailSmall = ({ data }: ProductDetailProps) => {
       {data?.price && (
         <p className="text-2xl text-primary">{data?.price} ريال قطري</p>
       )}
+      <p className="text-2xl font-light">{date}</p>
+
       <div className={cn("flex w-full gap-5 justify-center flex-col")}>
         {data?.images && data.images.length > 1 ? (
           data.images.map((img) => {

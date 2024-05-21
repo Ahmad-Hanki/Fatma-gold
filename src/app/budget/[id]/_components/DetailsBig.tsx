@@ -8,6 +8,7 @@ import defImage from "@/assets/defaultImage.png";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { formatDate } from "@/lib/formatter";
 interface Image {
   id: string;
   imageUrl: string;
@@ -17,13 +18,15 @@ interface Image {
 
 type ProductWithImages = Product & { images: Image[] };
 interface ProductDetailProps {
-  data?: ProductWithImages;
+  data: ProductWithImages;
 }
 const DetailsBig = ({ data }: ProductDetailProps) => {
   const [chosenPhoto, setChosenPhoto] = useState<StaticImport | string>(
     data?.images[0]?.imageUrl ?? defImage
   );
-  const phoneNumber = "+97470770668"; 
+  const date = formatDate(data.createAt);
+
+  const phoneNumber = "+97470770668";
   const whatsappLink = `https://wa.me/${phoneNumber}?text=لدي اهتمام في هذا المنتج: ${data?.name} - ${data?.description}`;
 
   return (
@@ -42,11 +45,9 @@ const DetailsBig = ({ data }: ProductDetailProps) => {
         {data?.price && (
           <p className="text-2xl text-primary">{data?.price} ريال قطري</p>
         )}
-        <div
-          className={cn(
-            'flex w-full gap-5 justify-center'
-           )}
-        >
+        <p className="text-2xl font-light">{date}</p>
+
+        <div className={cn("flex w-full gap-5 justify-center")}>
           {data?.images.map((img) => {
             return (
               <div
@@ -67,9 +68,7 @@ const DetailsBig = ({ data }: ProductDetailProps) => {
           })}
         </div>
         <Link href={whatsappLink} className="w-fit mx-auto">
-            <Button className="w-full py-5">
-                تواصل معنا عن طريق الواتساب
-            </Button>
+          <Button className="w-full py-5">تواصل معنا عن طريق الواتساب</Button>
         </Link>
       </div>
     </div>

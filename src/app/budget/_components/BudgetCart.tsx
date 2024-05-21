@@ -20,7 +20,7 @@ interface DashboardClientProps {
 }
 
 const BudgetCart = ({ data }: DashboardClientProps) => {
-  const phoneNumber = "+97470770668"; 
+  const phoneNumber = "+97470770668";
   const whatsappLink = `https://wa.me/${phoneNumber}?text=لدي اهتمام في هذا المنتج: ${data.name} - ${data.description}`;
 
   let image: string | StaticImageData;
@@ -29,7 +29,7 @@ const BudgetCart = ({ data }: DashboardClientProps) => {
     data.images.find((img) => img.isPrimary) || data.images[0];
   image = primaryImage ? primaryImage.imageUrl : defImage;
   return (
-    <div >
+    <div>
       <Card className="flex items-center flex-col justify-center gap-3 py-10">
         <div className="overflow-hidden relative w-[300px] aspect-[12/10]">
           <Image
@@ -44,13 +44,19 @@ const BudgetCart = ({ data }: DashboardClientProps) => {
         {data.price && (
           <p className="text-2xl text-primary">{data.price} ريال قطري</p>
         )}
+
+        <p className="text-2xl font-light">{date}</p>
+
         <div className="flex gap-5">
           <Link href={`/budget/${data.id}`} className="text-xl underline">
             تفاصيل
           </Link>
-          <Link href={whatsappLink} className="text-xl flex gap-3 items-center underline">
+          <Link
+            href={whatsappLink}
+            className="text-xl flex gap-3 items-center underline"
+          >
             <p>تواصل معي</p>
-            <Whatsapp className="h-7 w-7"/>
+            <Whatsapp className="h-7 w-7" />
           </Link>
         </div>
       </Card>

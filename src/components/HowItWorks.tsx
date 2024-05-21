@@ -5,7 +5,7 @@ const HowItWorks = () => {
         <div className="pt-24 flex-col flex items-center gap-7">
           <h1 className="text-4xl "> كيف نعمل؟</h1>
           <p className="text-2xl text-secondary-foreground/80">
-            ذهب فاطمة منصة لبيع وشراء الذهب المستعمل، حيث تتيح للمستخدمين
+            ذهب فاطمة منصة لبيع وشراء الذهب الجديد و المستعمل، حيث تتيح للمستخدمين
             التصفح وأخذ أفكار كاملة عن المعروضات والقيام بعمليات البيع والشراء
             بكل أريحية.
           </p>

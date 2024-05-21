@@ -7,15 +7,16 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Separator } from "./ui/separator";
 
 const Navbar = () => {
+  const phoneNumber = "+97470770668";
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=اريد الاستفسار عن شيئ`;
   const pathname = usePathname();
   return (
     <header className="relative">
@@ -43,7 +44,8 @@ const Navbar = () => {
                   className={cn(
                     "text-2xl text-secondary-foreground/70",
                     pathname.includes("/budget")
-                    ? "text-secondary-foreground font-bold" : ""
+                      ? "text-secondary-foreground font-bold"
+                      : ""
                   )}
                 >
                   المعروضات
@@ -52,12 +54,18 @@ const Navbar = () => {
                   href={"/dashboard"}
                   className={cn(
                     "text-2xl text-secondary-foreground/70",
-                    pathname == "/dashboard"
+                    pathname.includes("/dashboard")
                       ? "text-secondary-foreground "
                       : ""
                   )}
                 >
                   تسجيل الدخول
+                </Link>
+                <Link
+                  className={cn("text-2xl text-secondary-foreground/70")}
+                  href={whatsappLink}
+                >
+                  تواصل معي
                 </Link>
               </div>
               <div className="sm:hidden">
@@ -65,19 +73,21 @@ const Navbar = () => {
                   <DropdownMenuTrigger>
                     <Menu />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="min-w-[250px] min-h-[40vh] bg-secondary/90 flex items-center flex-col pt-20">
+                  <DropdownMenuContent className="min-w-[250px] min-h-[40vh] bg-secondary/90 flex items-center flex-col py-10">
                     <DropdownMenuItem>
                       <Link
                         className={cn(
                           "text-2xl text-secondary-foreground/70",
-                          pathname == "/" ? "text-secondary-foreground font-bold" : ""
+                          pathname == "/"
+                            ? "text-secondary-foreground font-bold"
+                            : ""
                         )}
                         href={"/"}
                       >
                         الرئيسية
                       </Link>
                     </DropdownMenuItem>
-                    
+                    <Separator className="my-6" />
                     <DropdownMenuItem>
                       <Link
                         className={cn(
@@ -89,6 +99,28 @@ const Navbar = () => {
                         href={"/budget"}
                       >
                         المعروضات
+                      </Link>
+                    </DropdownMenuItem>
+                    <Separator className="my-6" />
+                    <Link
+                      href={"/dashboard"}
+                      className={cn(
+                        "text-2xl text-secondary-foreground/70",
+                        pathname.includes("/dashboard")
+                          ? "text-secondary-foreground "
+                          : ""
+                      )}
+                    >
+                      تسجيل الدخول
+                    </Link>
+                    <Separator className="my-6" />
+
+                    <DropdownMenuItem>
+                      <Link
+                        className={cn("text-2xl text-secondary-foreground/70")}
+                        href={whatsappLink}
+                      >
+                        تواصل معي
                       </Link>
                     </DropdownMenuItem>
                   </DropdownMenuContent>

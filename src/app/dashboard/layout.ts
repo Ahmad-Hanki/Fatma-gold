@@ -9,8 +9,8 @@ interface DashboardLayoutProps  {
 
 const DashboardLayout = ({children}:DashboardLayoutProps) => {
   const cookie = cookies();
-  const data = cookie.get('togya');
-  if (!data || data.name != 'togya' || data.value != 'togya') {
+  const data = cookie.get('fatima');
+  if (!data || data.name != 'fatima' || data.value != 'hanki123') {
     redirect('/auth/login');
   }
   return children
