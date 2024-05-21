@@ -22,8 +22,8 @@ const Hero = () => {
               الأناقة والفخامة إلى إطلالتك.
             </h1>
 
-            <p className="text-2xl ">تجربة فريدة من الأناقة.</p>
-            <Link href={'/budget'}>
+            <p className="text-2xl">تجربة فريدة من الأناقة.</p>
+            <Link href={'/budget'} className="w-fit">
               <Button className="w-52 ml-auto py-7">الق نظرة</Button>
             </Link>
           </div>

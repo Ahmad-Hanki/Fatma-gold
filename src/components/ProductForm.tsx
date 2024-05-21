@@ -10,6 +10,8 @@ import editProductAction from "@/actions/editProductAction";
 import { useState } from "react";
 import UploadButtonComponent from "./UploadButton";
 import Image from "next/image";
+import { redirect } from "next/navigation";
+import { chosenImageProductAction } from "@/actions/chosenImage";
 
 interface Image {
   id: string;
@@ -24,6 +26,16 @@ interface ProductFormProps {
 
 const ProductForm = ({ data }: ProductFormProps) => {
   const [uploadedImage, setUploadedImage] = useState<string[]>([]);
+
+  const editChosenImage = async (id:string, productId:string) => {
+    await chosenImageProductAction(id, productId);
+
+    toast({
+      title: "  تم اختيار هذه الصورة كصورة عرض بنجاح ",
+    });
+    
+  }
+
   const submitHandler = async (formData: FormData) => {
     const name = formData.get("name")?.toString();
     const description = formData.get("description")?.toString();
@@ -63,6 +75,7 @@ const ProductForm = ({ data }: ProductFormProps) => {
       toast({
         title: "تمت اضافة االبيانات بنجاح",
       });
+      redirect("/dashboard");
     } else {
       const res = await editProductAction({
         description,
@@ -89,6 +102,7 @@ const ProductForm = ({ data }: ProductFormProps) => {
       toast({
         title: "تم تعدبل االبيانات بنجاح",
       });
+      redirect("/dashboard");
     }
   };
   return (
@@ -153,6 +167,9 @@ const ProductForm = ({ data }: ProductFormProps) => {
                   console.log(img.imageUrl);
                   return (
                     <div
+                    onClick={() => {
+                      editChosenImage(img.id, img.productId)
+                    }}
                       className="w-52 aspect-square overflow-hidden relative"
                       key={i}
                     >

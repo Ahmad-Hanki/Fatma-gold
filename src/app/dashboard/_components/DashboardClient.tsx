@@ -7,6 +7,7 @@ interface Image {
   id: string;
   imageUrl: string;
   productId: string;
+  isPrimary: boolean; 
 }
 
 type ProductWithImages = Product & { images: Image[] };

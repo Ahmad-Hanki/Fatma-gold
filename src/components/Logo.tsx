@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/app/favicon.webp";
+import logo from "@/app/icon.png";
 import Link from "next/link";
 const Logo = () => {
   return (

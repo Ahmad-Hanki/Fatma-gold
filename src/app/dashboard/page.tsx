@@ -31,7 +31,7 @@ const ProductPage = async () => {
   }
 
   return (
-    <div>
+    <div className="pb-12">
       <DashboardClient data={data} />
     </div>
   );

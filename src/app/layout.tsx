@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar">
-      <body className={"text-end "}>
+      <body dir="rtl">
         <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs

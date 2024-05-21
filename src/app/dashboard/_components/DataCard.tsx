@@ -14,6 +14,7 @@ interface Image {
   id: string;
   imageUrl: string;
   productId: string;
+  isPrimary: boolean;
 }
 
 type ProductWithImages = Product & { images: Image[] };
@@ -24,10 +25,13 @@ interface DataCardProps {
 const DataCard = ({ data }: DataCardProps) => {
   const [open, setOpen] = useState(false);
   const date = formatDate(data.createAt);
-  let image: string | StaticImageData = defImage;
-  if (data?.images[0]?.imageUrl != null) {
-    image = data.images[0].imageUrl;
-  }
+
+  let image: string | StaticImageData;
+
+  const primaryImage =
+    data.images.find((img) => img.isPrimary) || data.images[0];
+  image = primaryImage ? primaryImage.imageUrl : defImage;
+
   const deleteHandler = async (id: string) => {
     setOpen(false);
     const res = await deleteProductAction({ id });
@@ -70,10 +74,12 @@ const DataCard = ({ data }: DataCardProps) => {
           <p className="text-2xl text-secondary-foreground/60">
             {data.description}
           </p>
-          <p className="text-2xl text-primary">{data?.price} QAR</p>
+          {data?.price && (
+            <p className="text-2xl text-primary">{data?.price} QAR</p>
+          )}
           <p className="text-xl text-secondary-foreground/60">{date}</p>
           <div className="flex flex-col sm:flex-row gap-6">
-            <Link href={"/dashboard/" + data.id} className="flex-1 p-0">
+            <Link href={"/dashboard/" + data.id} className="flex-1 p-0 w-full ">
               <Button className="w-full py-5 flex gap-2">تعديل</Button>
             </Link>
             <Button
