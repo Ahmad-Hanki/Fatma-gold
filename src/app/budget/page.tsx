@@ -3,12 +3,15 @@ import prisma from "@/db/prisma";
 import BudgetClient from "./_components/BudgetClient";
 import MotionDiv from "@/components/MotionDiv";
 import { Metadata } from "next";
+import { unstable_noStore as noStore } from "next/cache";
 
 export const metadata: Metadata = {
   title: "المعروضات",
 };
 
 const BudgetPage = async () => {
+  noStore();
+
   const data = await prisma.product.findMany({
     orderBy: {
       createAt: "desc",
@@ -24,14 +27,15 @@ const BudgetPage = async () => {
         <Container>
           <MotionDiv
             initial={{
-              y:30,
-              opacity:0
+              y: 30,
+              opacity: 0,
             }}
             whileHover={{
-              y:0,
-              opacity:1
+              y: 0,
+              opacity: 1,
             }}
-          className="h-[70vh] w-full grid place-content-center">
+            className="h-[70vh] w-full grid place-content-center"
+          >
             <h1 className="text-3xl sm:text-5xl text-center">
               المكان خال. عد في وقت لاحق ....
             </h1>
