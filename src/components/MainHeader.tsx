@@ -1,6 +1,6 @@
 const MainHeader = () => {
     return (
-      <div className="absolute top-0 left-0 w-full h-[40vh] overflow-hidden bg-transparent z-[-1]">
+      <div className="absolute top-0 left-0 w-full h-[50vh] overflow-hidden bg-transparent z-[-1]">
         <svg
           className="absolute top-0 right-0 w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
