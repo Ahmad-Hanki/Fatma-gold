@@ -34,7 +34,7 @@ export default function RootLayout({
         />
         <Navbar />
         <main
-        className="w-screen overflow-hidden"
+        // className="w-screen overflow-hidden"
         >{children}</main>
         <Footer />
         <Toaster />

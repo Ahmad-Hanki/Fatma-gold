@@ -26,7 +26,7 @@ const DashboardClient = ({ data }: DashboardClientProps) => {
             </Link>
           </div>
           <div>
-            <div className="grid grid-cols-1 gap-3">
+            <div className="flex flex-col gap-5 justify-center items-center">
               {data.map((item) => {
                 return <DataCard data={item}key={item.id}/>;
               })}
