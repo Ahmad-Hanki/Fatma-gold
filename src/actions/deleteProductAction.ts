@@ -27,6 +27,8 @@ export const deleteProductAction = async ({ id }: addProductionActionProps) => {
         },
       });
       revalidatePath("/dashboard");
+      revalidatePath("/budget");
+
       return 1;
     }
     return 0;

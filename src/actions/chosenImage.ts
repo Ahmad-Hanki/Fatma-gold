@@ -20,5 +20,7 @@ export const chosenImageProductAction = async (
     ]);
 
     revalidatePath("/dashboard");
+    revalidatePath("/budget");
+
   } catch (err) {}
 };

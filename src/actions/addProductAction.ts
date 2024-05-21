@@ -28,6 +28,7 @@ const addProductAction = async ({
       },
     });
     revalidatePath("/dashboard");
+    revalidatePath("/budget");
   } catch (err) {
     console.error(err); 
     return -1;

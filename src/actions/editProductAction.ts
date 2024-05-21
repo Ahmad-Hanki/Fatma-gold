@@ -52,6 +52,8 @@ const editProductAction = async ({
     }
 
     revalidatePath("/dashboard");
+    revalidatePath("/budget");
+
     return 1
   } catch (err) {
     console.error(err);
