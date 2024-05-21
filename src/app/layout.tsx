@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ذهب فاطمة",
-  description: "منصة لشراء الذهب المستعمل",
+  description: "منصة لشراء لبيع و الذهب المستعمل",
 };
 
 export default function RootLayout({

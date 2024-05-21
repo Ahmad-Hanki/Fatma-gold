@@ -2,6 +2,11 @@ import Container from "@/components/Container";
 import prisma from "@/db/prisma";
 import BudgetClient from "./_components/BudgetClient";
 import MotionDiv from "@/components/MotionDiv";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "المعروضات",
+};
 
 const BudgetPage = async () => {
   const data = await prisma.product.findMany({
