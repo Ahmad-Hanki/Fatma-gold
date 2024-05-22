@@ -10,7 +10,7 @@ import editProductAction from "@/actions/editProductAction";
 import { useState } from "react";
 import UploadButtonComponent from "./UploadButton";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { chosenImageProductAction } from "@/actions/chosenImage";
 
 interface Image {
@@ -74,7 +74,7 @@ const ProductForm = ({ data }: ProductFormProps) => {
       toast({
         title: "تمت اضافة االبيانات بنجاح",
       });
-      redirect("/dashboard");
+      useRouter().push("/dashboard");
     } else {
       const res = await editProductAction({
         description,
@@ -101,7 +101,7 @@ const ProductForm = ({ data }: ProductFormProps) => {
       toast({
         title: "تم تعدبل االبيانات بنجاح",
       });
-      redirect("/dashboard");
+      useRouter().push("/dashboard");
     }
   };
   return (
@@ -183,7 +183,7 @@ const ProductForm = ({ data }: ProductFormProps) => {
                 })}
               </div>
             )}
-          <SubmitButton submit=" الاضافة" submitting=" الرجاء الانتظار" />
+          <SubmitButton submit={data ? 'حفظ' :  "اضافة" } submitting="الرجاء الانتظار" />
         </form>
       </Card>
     </div>
