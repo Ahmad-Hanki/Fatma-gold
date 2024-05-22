@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 const page = () => {
   const cookie = cookies();
   const data = cookie.get('fatima');
-  if (data && data.name == 'fatima' && data.value == 'hanki123') {
+  if (data && data.name == 'fatima' && data.value == 'fatima123') {
     redirect('/dashboard');
   }
   return (

@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className="w-full flex items-center justify-between ">
             <div className="flex gap-6 items-center">
               <Logo />
-              <p className="text-2xl">ذهب فاطمة</p>
+              <p className="text-2xl">ذهب الفخامة</p>
             </div>
             <div className="flex items-center">
               <div className="hidden sm:flex gap-7">

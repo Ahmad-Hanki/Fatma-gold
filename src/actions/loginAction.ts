@@ -10,7 +10,7 @@ interface loginActionProps {
 const loginAction = async ({ password, username }: loginActionProps) => {
   const cookie = cookies();
   const loginUsername = "fatima";
-  const loginPassword = "hanki123";
+  const loginPassword = "fatima123";
   if (!username || !password) {
     return 0;
   } else if (username != loginUsername || password != loginPassword) {

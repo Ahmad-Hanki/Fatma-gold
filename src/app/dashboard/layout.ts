@@ -11,7 +11,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   noStore();
   const cookie = cookies();
   const data = cookie.get("fatima");
-  if (!data || data.name != "fatima" || data.value != "hanki123") {
+  if (!data || data.name != "fatima" || data.value != "fatima123") {
     redirect("/auth/login");
   }
   return children;
