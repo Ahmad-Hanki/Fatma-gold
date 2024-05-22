@@ -109,7 +109,7 @@ const ProductForm = ({ data }: ProductFormProps) => {
       <Card className="p-10">
         <form
           action={submitHandler}
-          className="px-8 w-full  flex flex-col gap-5"
+          className="w-full  flex flex-col gap-5"
         >
           <Input
             className=" py-10"

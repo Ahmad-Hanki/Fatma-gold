@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ذهب فاطمة",
+  title: "ذهب ام احمد",
   description: "منصة لشراء لبيع و الذهب المستعمل",
 };
 

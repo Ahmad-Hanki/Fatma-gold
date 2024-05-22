@@ -45,7 +45,7 @@ const LoginForm = () => {
   return (
     <div className=" w-full h-[70vh] grid place-content-center ">
       <Card className="p-10">
-        <form action={submitHandler} className="w-full min-w-[400px] flex flex-col gap-5 px-8">
+        <form action={submitHandler} className="w-full min-w-[200px] flex flex-col gap-5 ">
           <Input
             className=" py-10"
             placeholder="اسم المستخدم"
