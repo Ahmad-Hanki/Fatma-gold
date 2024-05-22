@@ -17,7 +17,7 @@ const BudgetClient = ({ data }: DashboardClientProps) => {
   
   return (
     <div className="pb-12">
-      <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 grid-cols-1 md:grid-cols-2">
         {data.map((item) => {
           return <BudgetCart key={item.id} data={item} />;
         })}

@@ -25,6 +25,8 @@ interface ProductFormProps {
 }
 
 const ProductForm = ({ data }: ProductFormProps) => {
+  const router = useRouter();
+
   const [uploadedImage, setUploadedImage] = useState<string[]>([]);
 
   const editChosenImage = async (id: string, productId: string) => {
@@ -33,6 +35,8 @@ const ProductForm = ({ data }: ProductFormProps) => {
     toast({
       title: "  تم اختيار هذه الصورة كصورة عرض بنجاح ",
     });
+
+    router.push("/dashboard");
   };
 
   const submitHandler = async (formData: FormData) => {
@@ -74,7 +78,7 @@ const ProductForm = ({ data }: ProductFormProps) => {
       toast({
         title: "تمت اضافة االبيانات بنجاح",
       });
-      useRouter().push("/dashboard");
+      router.push("/dashboard");
     } else {
       const res = await editProductAction({
         description,
@@ -101,16 +105,13 @@ const ProductForm = ({ data }: ProductFormProps) => {
       toast({
         title: "تم تعدبل االبيانات بنجاح",
       });
-      useRouter().push("/dashboard");
+      router.push("/dashboard");
     }
   };
   return (
     <div className=" w-full grid place-content-center">
       <Card className="p-10">
-        <form
-          action={submitHandler}
-          className="w-full  flex flex-col gap-5"
-        >
+        <form action={submitHandler} className="w-full  flex flex-col gap-5">
           <Input
             className=" py-10"
             placeholder="الاسم"
@@ -183,7 +184,10 @@ const ProductForm = ({ data }: ProductFormProps) => {
                 })}
               </div>
             )}
-          <SubmitButton submit={data ? 'حفظ' :  "اضافة" } submitting="الرجاء الانتظار" />
+          <SubmitButton
+            submit={data ? "حفظ" : "اضافة"}
+            submitting="الرجاء الانتظار"
+          />
         </form>
       </Card>
     </div>
