@@ -46,7 +46,7 @@ const BudgetCart = ({ data }: DashboardClientProps) => {
     }}
 
     >
-      <Card className="flex items-center flex-col justify-center gap-3 py-10">
+      <Card className="flex items-center flex-col justify-center gap-3 p-10 text-center">
         <div className="overflow-hidden relative w-[300px] aspect-[12/10]">
           <Image
             src={image}
