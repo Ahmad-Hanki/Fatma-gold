@@ -52,7 +52,7 @@ const BudgetCart = ({ data }: DashboardClientProps) => {
             src={image}
             fill
             alt="photo"
-            className="object-center object-contain"
+            className="object-center object-contain scale-110"
           />
         </div>
         <h1 className="text-4xl ">{data.name}</h1>
